@@ -13,3 +13,6 @@ create user 'luane.gabrielly'@'localhost'identified by'123456';
 create user 'tiago.lima'@'localhost'identified by'123456';
 create user 'daniel.gomes'@'localhost'identified by'123456';
 
+
+
+
