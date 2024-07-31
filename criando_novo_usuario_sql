@@ -13,6 +13,15 @@ create user 'luane.gabrielly'@'localhost'identified by'123456';
 create user 'tiago.lima'@'localhost'identified by'123456';
 create user 'daniel.gomes'@'localhost'identified by'123456';
 
+/*Aplicando permissão de consulta a todos os arquivos/banco no servidor*/
+grant select
+on *.*
+to danielgomes@localhost;
+/*aplicando permissão de inserção em todas as tabelas do  banco*/
+grant insert 
+on bd_caso_estudo_vendas.*
+to estagiario@localhost;
+
 
 
 
