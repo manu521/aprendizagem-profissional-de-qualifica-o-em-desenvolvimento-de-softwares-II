@@ -1,0 +1,4 @@
+/*Aplicando permissão de consulta a todos os arquivos/banco no servidor*/
+grant select
+on *.*
+to danielgomes@localhost;
