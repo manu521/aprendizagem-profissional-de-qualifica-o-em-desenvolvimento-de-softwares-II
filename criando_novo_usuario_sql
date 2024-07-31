@@ -22,6 +22,11 @@ grant insert
 on bd_caso_estudo_vendas.*
 to estagiario@localhost;
 
+/*aplicando permissão de inserção em tabelas definida*/
+grant insert
+on bd_caso_estudo_vendas.tb_prod
+to danielgomes@localhost;
+
 
 
 
