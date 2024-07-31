@@ -27,6 +27,22 @@ grant insert
 on bd_caso_estudo_vendas.tb_prod
 to danielgomes@localhost;
 
+grant insert, update, delete
+on `bd_caso_estudo_vendas`.`tb_func`
+to root@localhost;
+
+REVOKE INSERT, UPDATE
+ON `bd_caso_estudo_vendas`.`tb_func`
+FROM root@localhost;
+
+GRANT DELETE
+ON `bd_caso_estudo_vendas`.`tb_func`
+TO root@localhost;
+
+GRANT insert
+ON `bd_caso_estudo_vendas`.`tb_func`
+TO root@localhost;
+
 
 
 
