@@ -1,0 +1,13 @@
+/*consultando registros da tabela*/
+select * from tb_cli;
+/*consultando registros das tabelas ordenando resultados*/
+select * from tb_cli 
+order by cli_nome asc;
+/*consultando registros das tabelas filtrando resultados*/
+select * from tb_cli
+where cli_end_bairro = 'bairro j';
+/*consultando registros por nome*/
+select * from tb_cli
+where cli_nome like '%tatiane%';
+select * from tb_compra;
+select count(*)from tb_compra;
