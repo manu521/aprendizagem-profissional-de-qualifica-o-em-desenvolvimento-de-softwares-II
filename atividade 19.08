@@ -74,3 +74,34 @@ alter table `bd_exercicio`.`tb_projeto`
 add constraint `fk_proj_local_cod`
 foreign key (`local_cod`)
 references `bd_exercicio`.`tb_local` (`local_codigo`);
+
+-- Inserindo dados na tabela local
+insert into `bd_exercicio`.`tb_local`(`local_codigo`, `local_desc`) values (1, 'São Paulo');
+insert into `bd_exercicio`.`tb_local`(`local_codigo`, `local_desc`) values (2, 'Minas Gerais');
+insert into `bd_exercicio`.`tb_local`(`local_codigo`, `local_desc`) values (3, 'Rio de Janeiro');
+-- Inserindo dados na tabela departamento
+insert into `bd_exercicio`.`tb_departamento` (`depto_codigo`, `depto_nome`, `local_cod`)
+	values (1, 'TI', 1);
+    insert into `bd_exercicio`.`tb_departamento` (`depto_codigo`, `depto_nome`, `local_cod`)
+	values (2, 'RH', 2);
+    insert into `bd_exercicio`.`tb_departamento` (`depto_codigo`, `depto_nome`,)
+	values (3, 'ADM', 3);
+    
+-- Inserindo dados na tabela projeto
+insert into `bd_exercicio`.`tb_projeto`(`proj_codigo`, `proj_numero`, `depto_cod`, `local_cod`)
+	values (1, 11, 1, 1);
+    insert into `bd_exercicio`.`tb_projeto`(`proj_codigo`, `proj_numero`, `depto_cod`, `local_cod`)
+	values (2, 22, 2, 2);
+    
+-- Inserindo funcionario que trabalha no depto 1 e projeto 1, estefuncionario nao gerencia um departamento
+insert into `bd_exercicio`.`tb_funcionario`(`func_codigo`, `func_nome`, `func_cpf`, `forn_end`, `forn_salario`,`ger_depto_cod` , `trab_depto_cod`, `proj_cod`)
+values (1, 'Jose Silva', '12312312344', 'Endereço', 2000, null, 1, 1);
+
+-- Inserindo funcionario que trabalha e gerencia o departamento 2, e trabalha tambem no projeto 2
+insert into `bd_exercicio`.`tb_funcionario`(`func_codigo`, `func_nome`, `func_cpf`, `forn_end`, `forn_salario`, `ger_depto_cod`, `trab_depto_cod`, `proj_cod`)
+values (2, 'Ana Silva', '12345678944', 'Endereço', 3000, 2, 2, 2);
+select `func_nome`, `depto_nome`, `proj_numero`
+from `bd_exercicio`.`tb_funcionario`
+inner join `bd_exercicio`.`tb_departamento` on `depto_codigo` = `trab_depto_cod`
+inner join `bd_exercicio`.`tb_projeto` on `proj_codigo` = `proj_cod`;
+
